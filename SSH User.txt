@@ -1,0 +1,48 @@
+ssh -i your-key.pem -N -L 22:rds_endpoint:rds_port ec2-user@frontend_server_ip  // setup ssh tunneling between rds and server
+	
+#useradd <name> or adduser <name>
+sudo userdel -r username
+
+#useradd -d /home/anand -m anand
+# su - <name>
+$ssh-keygen
+press three time enter
+$ls -al				(There will be .ssh directory go to .ssh directory)
+$cd .ssh
+$ls -al
+$cat id_rsa				(that is your pem file) save with username.pem(all files)   
+$mv id_rsa.pub authorized_keys 		(rename id_rsa.put to authorized_keys)
+$chmod 600 authorized_keys
+$exit
+#vi /etc/sudoers
+
+<name> ALL=(ALL:ALL) NOPASSWD:ALL
+
+// Go to puttygen load key > conversation > export Openssh key then save with username.pem
+https://serverfault.com/questions/854208/ssh-suddenly-returning-invalid-format --- can check with link 
+
+try to connect with pem and enter with sshuser in windows
+Go to location and CMD then
+ssh -i edinnonew.pem edinnonew@3.109.91.171
+
+
+sudo vi /etc/ssh/sshd_config
+PermitRootLogin no
+PasswordAuthentication no
+PubkeyAuthentication yes
+
+
+///https://learnubuntu.com/change-file-ownership/#google_vignette  //link for permissions
+
+//Install OpenSSH in Windows//
+Setting>Apps>Optional features>add on optional features>search(OpenSSH)>Next>Install
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+C:\Users\shush\.ssh\known_hosts         // delete that line
+ssh-keygen -R <hostname_or_IP>
+
+

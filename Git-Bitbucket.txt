@@ -1,0 +1,21 @@
+git init
+cd shubhra/
+git status
+git config --global user.email "shubhra.gupta@edique.in"
+git config --global user.name "Shubhra Gupta"
+git clone https://shubhragupta1-admin@bitbucket.org/shubhragupta1/shubhra.git
+touch shubhra
+git add .
+git commit -m "1st commit"
+git push -u origin main
+ls
+
+  
+
+git add .
+git commit -m "2nd commit"
+git push -u origin main
+
+
+
+git clone git@bitbucket.org:<username>/<repository>.git

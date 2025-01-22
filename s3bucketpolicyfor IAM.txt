@@ -1,0 +1,85 @@
+////to give get,put,list access for all s3 buckets except delete to particular iam user//////
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:ListBucket"
+			],
+			"Resource": [
+				"arn:aws:s3:::*",
+				"arn:aws:s3:::*/**"
+			]
+		},
+		{
+			"Effect": "Deny",
+			"Action": [
+				"s3:DeleteObject",
+				"s3:DeleteBucketWebsite",
+				"s3:DeleteObjectVersion",
+				"s3:DeleteObject",
+				"s3:DeleteBucket"
+			],
+			"Resource": [
+				"arn:aws:s3:::*",
+				"arn:aws:s3:::*/**"
+			]
+		}
+	]
+}
+
+
+
+
+
+
+
+
+///To give access of single bucket to particular IAM user except delection action/////
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "VisualEditor0",
+			"Effect": "Allow",
+			"Action": "s3:GetBucketLocation",
+			"Resource": "arn:aws:s3:::*"
+		},
+		{
+			"Sid": "VisualEditor1",
+			"Effect": "Allow",
+			"Action": "s3:ListAllMyBuckets",
+			"Resource": "arn:aws:s3:::*"
+		},
+		{
+			"Sid": "VisualEditor2",
+			"Effect": "Allow",
+			"Action": "s3:*",
+			"Resource": [
+				"arn:aws:s3:::prod-edique-backend",
+				"arn:aws:s3:::prod-edique-backend/*"
+			]
+		},
+		{
+			"Sid": "VisualEditor3",
+			"Effect": "Deny",
+			"Action": [
+				"s3:DeleteBucketWebsite",
+				"s3:DeleteObjectVersion",
+				"s3:DeleteObject",
+				"s3:DeleteBucket"
+			],
+			"Resource": [
+				"arn:aws:s3:::prod-edique-backend",
+				"arn:aws:s3:::prod-edique-backend/*"
+			]
+		}
+	]
+}
+
+aws s3 rm s3://prod-edique-backend/test/ /// to remove by aws cli/denied
+aws s3 ls       // to list all buckets not possible to remove to access to show other bucket
+aws s3 cp PortalDetails.xlsx s3://prod-edique-mdm-backend/   // try to copy file from local to s3 /denied

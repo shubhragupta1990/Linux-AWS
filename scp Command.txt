@@ -1,0 +1,12 @@
+Syntax: SCP -r username@ip:/sourcefile destination_windows_path
+Command: SCP -r anandtest@35.154.178.231:/var/www/html/pcmc C:\Users\shush\OneDrive\Desktop
+
+
+scp user@192.168.1.255:/var/www/html/to/mbdlms.tar.gz /C:\Users\shush\OneDrive\Desktop/on/local/machine/
+
+scp /var/www/html/to/mbdlms.tar.gz 122.161.48.202:C:\Users\shush\OneDrive\Desktop
+
+
+scp -r linux_username@linux_address:path/to/file path/to/local/directory
+
+edique ALL=(ALL:ALL) ALL

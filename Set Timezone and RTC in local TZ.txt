@@ -1,0 +1,7 @@
+timedatectl                     //to check timezone
+timedatectl list-timezones
+timedatectl list-timezones | grep Asia/Kolkata          
+sudo timedatectl set-timezone Asia/Kolkata              //to set indian timezone
+timedatectl                             
+timedatectl set-local-rtc 1                             // to set RTC in local TZ:YES
+timedatectl

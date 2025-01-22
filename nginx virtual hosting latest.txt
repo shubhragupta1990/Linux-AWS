@@ -1,0 +1,2 @@
+sudo vi /etc/nginx/sites-available/biharictpms.exactics.in  //copy file from old and change domain name and path
+sudo ln -s /etc/nginx/sites-available/biharictpms.exactics.in /etc/nginx/sites-enabled/

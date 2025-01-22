@@ -1,0 +1,15 @@
+go to lambda function > add trigger > eventbridge> create a new rule >name > scheduled expression > cron(*/15 * * * ? *)> add
+add destination > select lambda function
+
+2164512461
+
+
+mysql -h mdmlite.cnjpggzatdk9.ap-south-1.rds.amazonaws.com -u mdmlite -p
+
+aws rds create-db-snapshot --db-instance-identifier mdmlite --db-snapshot-identifier 21st_November_Snapshot
+_
+
+aws rds describe-db-snapshots --db-snapshot-identifier newsnapshot
+aws rds create-db-snapshot --db-instance-identifier mdmlite --db-snapshot-identifier mdmlitenewsnapshot
+
+

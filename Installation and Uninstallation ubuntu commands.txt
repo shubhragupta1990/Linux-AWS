@@ -1,0 +1,18 @@
+apt list --installed
+apt-cache search packagename 
+or 
+dpkg --list
+
+apt remove package_name
+apt remove package_name_1 package_name_2
+apt purge package_name
+
+sudo apt-get clean
+
+apt-get purge PACKAGE_NAME
+apt-get remove PACKAGE_NAME
+sudo apt-get autoremove
+
+dpkg–query –l | grep package_name
+dpkg–query –l | grep *partial_name*
+dpkg --remove packagename
