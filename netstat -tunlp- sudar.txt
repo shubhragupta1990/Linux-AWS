@@ -1,0 +1,52 @@
+netstat -tunlp
+ 1666  cd /etc/nginx/sites-available/
+ 1667  ls
+ 1668  ll
+ 1669  cd ../sites-enabled/
+ 1670  ls
+ 1671  vim default
+ 1672  ls
+ 1673  ls -la
+ 1674  cd ../sites-available/
+ 1675  ls
+ 1676  ll
+ 1677  rm .default.swp
+ 1678  ls
+ 1679  ll
+ 1680  rm .default.swo
+ 1681  ls
+ 1682  ll
+ 1683  vim default
+ 1684  cd /var/www/html/pcmc/web/
+ 1685  ls
+ 1686  ll
+ 1687  cat index.php
+ 1688  tail -f /var/log/nginx/error.log
+ 1689  systemctl status nginx
+ 1690  l
+ 1691  cd /etc/nginx/sites-available/
+ 1692  ls
+ 1693  vim default +118
+ 1694  cd /etc/nginx/
+ 1695  ls
+ 1696  cd mime.types
+ 1697  cat mime.types
+ 1698  ls
+ 1699  vim nginx.conf
+ 1700  ls
+ 1701  cd conf.d/
+ 1702  ls
+ 1703  lll
+ 1704  cd ..
+ 1705  ls
+ 1706  vim scgi_params
+ 1707  vim fastcgi.conf
+ 1708  cd  sites-available/
+ 1709  ls
+ 1710  vim default
+ 1711  vim ../mime.types
+ 1712  systemctl restart gnixnx
+ 1713  systemctl restart nginx
+ 1714  ls
+ 1715  rm -rf default.bkp
+ 1716  ls
