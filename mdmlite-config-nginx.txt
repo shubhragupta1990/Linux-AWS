@@ -1,0 +1,45 @@
+server { # Specify the listening port # The same thing for IPv6
+
+root /var/www/html/mdm_lite; # The path to the website files
+
+index index.html index.htm index.php; # Files to display if only the domain name is specified in the address
+
+server_name mdmlite.exactics.in; # Domain name of this site
+
+location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ /index.php;
+        }
+
+        location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+                fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+        }
+
+        location ~ /\.ht {
+                deny all;
+        }
+
+
+    listen [::]:443 ssl ipv6only=on; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/mdmlite.exactics.in/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/mdmlite.exactics.in/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    if ($host = mdmlite.exactics.in) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+listen 80;
+
+listen [::]:80;
+
+server_name mdmlite.exactics.in;
+    return 404; # managed by Certbot
